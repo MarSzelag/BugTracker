@@ -2,33 +2,46 @@ package com.example.bugtracker.models;
 
 import com.example.bugtracker.models.enums.Priority;
 import com.example.bugtracker.models.enums.Status;
+import com.example.bugtracker.models.enums.Tag;
 import com.example.bugtracker.models.enums.Type;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
+@Data
 public class Issue {
     @Id
     @GeneratedValue
-    Long id;
-    Status status;
+    private Long id;
+    private Status status;
 
-    Priority priority;
-    Type type;
+    private Priority priority;
+    private Type type;
+
     //TODO* List<Enum> tags
-    String name;
-    String description;
-    String code;
-    /* TODO
-    Person creator;
-    Person assignee;
-     */
-    Date dateCreated;
-    Date lastUpdate;
+    private List<Tag> tags;
+
+    private String name;
+    private String description;
+    private String code;
+    @ManyToOne
+    @JoinColumn(name = "creator_id", nullable = false)
+    private Person creator;
+
+    @ManyToOne
+    @JoinColumn(name = "assigne_id", nullable = false)
+    private Person assignee;
+
+    private Date dateCreated;
+    private Date lastUpdate;
+
     //TODO List<Comment> comments
+    @OneToMany
+    @JoinColumn(name = "comment_id", nullable = false)
+    private List<Comment> comments;
 
 
 }
