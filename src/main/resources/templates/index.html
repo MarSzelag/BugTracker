@@ -11,6 +11,9 @@
 <div class="container">
     <section layout:fragment="custom-content">
         <h1 th:text="#{index.bugtracker}">Default Message</h1>
+        <br>
+        <p th:text="${#locale.language}">language</p>
+        <p th:text="${#locale.country}">country</p>
     </section>
 </div>
 </body>

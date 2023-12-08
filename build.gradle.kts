@@ -31,8 +31,6 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
-    //.......implementation("org.springframework.boot:thymeleaf-layout-dialect")
-    //.......implementation("nz.net.ultraq.thymeleaf", "thymeleaf-layout-dialect", "2.4.1")
 }
 
 tasks.withType<Test> {
