@@ -22,8 +22,8 @@ public class MessageConfig implements WebMvcConfigurer {
     @Bean
     public LocaleResolver localeResolver() { //Set the way date related operations should behave according to region or country selected.
         SessionLocaleResolver slr = new SessionLocaleResolver();
-        //slr.setDefaultLocale(new Locale("pl", "PL"));
-        slr.setDefaultLocale(new Locale("en","GB"));
+        slr.setDefaultLocale(new Locale("pl", "PL"));
+        //slr.setDefaultLocale(new Locale("en","GB"));
         return slr;
     }
 
