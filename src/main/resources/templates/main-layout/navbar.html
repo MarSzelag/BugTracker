@@ -9,7 +9,6 @@
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link" href="#"><b th:text="#{navbar.home}">Default Home</b></a>
-                    <!-- <a class="nav-link" href="#"><b>Home</b>Home <span class="sr-only"></span></a> -->
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Features</a>
@@ -24,18 +23,19 @@
                         data-bs-toggle="dropdown" th:text="#{navbar.lang.chooseLanguage}">
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="book-dropdown">
+
                     <li><a th:href="@{/?lang=pl}" class="dropdown-item" th:text="#{navbar.lang.pl}">Polski</a></li>
                     <li><a th:href="@{/?lang=en}" class="dropdown-item" th:text="#{navbar.lang.en}">Angielski</a></li>
                 </ul>
             </div>
-
+<!--
             <span th:text="#{navbar.lang.chooseLanguage}"></span>:
             <select id="locales">
                 <option value=""></option>
                 <option value="pl" th:text="#{navbar.lang.pl}"></option>
                 <option value="en" th:text="#{navbar.lang.en}"></option>
             </select>
-
+-->
 
         </div>
     </nav>

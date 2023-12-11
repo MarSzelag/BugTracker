@@ -18,8 +18,6 @@ import java.util.Locale;
 @AllArgsConstructor
 @RequestMapping("index")
 public class IndexController {
-    @Autowired
-    private LocaleResolver localeResolver;
 
 
     @GetMapping
@@ -28,16 +26,6 @@ public class IndexController {
         return modelAndView;
     }
 
-    @GetMapping("/change-locale")
-    public ModelAndView changeLocale(@RequestParam String lang, HttpServletRequest request, HttpServletResponse response) {
-        Locale locale = new Locale(lang);
-        localeResolver.setLocale(request, response, locale);
 
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("redirect:/"); // Redirect to the desired view
-        modelAndView.addObject("message", "Locale changed successfully"); // Add any additional model data
-
-        return modelAndView;
-    }
 
 }
