@@ -19,7 +19,30 @@
             </ul>
 
             <div class="dropdown" mt-3>
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="book-dropdown"
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="project-dropdown"
+                        data-bs-toggle="dropdown" th:text="#{navbar.project.chooseOption}">
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="book-dropdown">
+                    <li><a th:href="@{/?lang=pl}" class="dropdown-item" th:text="#{navbar.project.userProjectsList}">Lista projektów</a></li>
+                    <li><a th:href="@{/?lang=en}" class="dropdown-item" th:text="#{navbar.project.add}">Dodaj projekt</a></li>
+                    <li><a th:href="@{/?lang=pl}" class="dropdown-item" th:text="#{navbar.project.edit}">Edytuj projekt</a></li>
+                    <li><a th:href="@{/?lang=en}" class="dropdown-item" th:text="#{navbar.project.remove}">Usuń projekt</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown" mt-3>
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="issue-dropdown"
+                        data-bs-toggle="dropdown" th:text="#{navbar.issue.chooseOption}">
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="book-dropdown">
+                    <li><a th:href="@{/?lang=en}" class="dropdown-item" th:text="#{navbar.issue.add}">Angielski</a></li>
+                    <li><a th:href="@{/?lang=pl}" class="dropdown-item" th:text="#{navbar.issue.edit}">Polski</a></li>
+                    <li><a th:href="@{/?lang=en}" class="dropdown-item" th:text="#{navbar.issue.remove}">Angielski</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown" mt-3>
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="language-dropdown"
                         data-bs-toggle="dropdown" th:text="#{navbar.lang.chooseLanguage}">
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="book-dropdown">

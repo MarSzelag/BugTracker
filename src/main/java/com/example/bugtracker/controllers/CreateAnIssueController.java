@@ -3,16 +3,20 @@ import jakarta.validation.Valid;
 import com.example.bugtracker.repositories.IssueRepository;
 import com.example.bugtracker.services.ProjectService;
 import com.example.bugtracker.models.Issue;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 @Controller
+@AllArgsConstructor
+@RequestMapping("/issue")
 public class CreateAnIssueController {
 
     private final IssueRepository issueRepository;

@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface ProjectRepository extends JpaRepository<Project, Long>, JpaSpecificationExecutor<Project> {
-    @Query(value = "select * from project where enabled = :enabled", nativeQuery = true)
+    @Query(value = "select * from Project where enabled = :enabled", nativeQuery = true)
     List<Project> findAllByEnabledNative(@Param("enabled") boolean enabled);
 
     List<Project> findAllByEnabled(boolean enabled);

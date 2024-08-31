@@ -15,34 +15,37 @@ import java.util.Date;
 public class ProjectService {
     final private ProjectRepository projectRepository;
     final private PersonService personService;
-    public Iterable<Project> findAll(){
+
+    public Iterable<Project> findAll() {
         return projectRepository.findAll();
     }
 
-    public Page<Project> findAll(Specification<Project> specification, Pageable pageable){
+    public Page<Project> findAll(Specification<Project> specification, Pageable pageable) {
         return projectRepository.findAll(specification, pageable);
     }
 
-    public void save(Project project){
-        if (project.getDateCreated() == null){
+    public void save(Project project) {
+        if (project.getDateCreated() == null) {
             project.setDateCreated((new Date()));
         }
         projectRepository.save(project);
     }
 
-    public void delete(Long id){ projectRepository.deleteById(id);}
-}
-
-public String createProjectShortName(String name){
-    String[] words = name.split(' ');
-    String shortName = '';
-    for(String word : words){
-        shortName += word.substring(0, 1);
+    public void delete(Long id) {
+        projectRepository.deleteById(id);
     }
-    return shortName;
-}
 
-public String createProjectDescription(Project project){
-    String desc = project.getName() + 'created by' + personService.getProjectCreatorData(project);
-    return desc;
+    public String createProjectShortName(String name) {
+        String[] words = name.split(" ");
+        String shortName = "";
+        for (String word : words) {
+            shortName += word.substring(0, 1);
+        }
+        return shortName;
+    }
+
+    public String createProjectDescription(Project project) {
+        String desc = project.getName() + "created by" + personService.getProjectCreatorData(project);
+        return desc;
+    }
 }
